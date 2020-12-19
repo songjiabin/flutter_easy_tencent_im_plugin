@@ -5,6 +5,7 @@
 ///  Created by Jack Zhang on 12/19/20 .
 ///
 export 'package:flutter/material.dart';
+export 'package:flutter_easy_tencent_im_plugin/im_client.dart';
 export 'package:flutter_easy_tencent_im_plugin/listeners/im_connection_listener.dart';
 export 'package:flutter_easy_tencent_im_plugin/listeners/im_conversation_listener.dart';
 export 'package:flutter_easy_tencent_im_plugin/listeners/im_friend_listener.dart';
