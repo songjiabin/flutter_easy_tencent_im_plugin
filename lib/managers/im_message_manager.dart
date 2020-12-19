@@ -23,7 +23,7 @@ class ImMessageManager {
   /// [priority] 消息优先级，仅针对群聊消息有效。请把重要消息设置为高优先级（比如红包、礼物消息），高频且不重要的消息设置为低优先级（比如点赞消息）。
   /// [offlinePushInfo] 离线推送时携带的标题和内容。
   /// [Return] 消息ID
-  static Future<String> sendMessage({
+  Future<String> sendMessage({
     String receiver,
     String groupID,
     @required MessageNode node,
@@ -47,14 +47,14 @@ class ImMessageManager {
 
   /// 撤回消息
   /// [msgID] 消息ID
-  static Future<void> revokeMessage({@required String msgID}) => TencentImPlugin.revokeMessage(message: FindMessageEntity(msgId: msgID));
+  Future<void> revokeMessage({@required String msgID}) => TencentImPlugin.revokeMessage(message: FindMessageEntity(msgId: msgID));
 
   /// 获得历史记录，此方法为 getC2CHistoryMessageList + getGroupHistoryMessageList 提供的统一封装方法，(userID 和 group) 不能都为空
   /// [userId] 用户ID
   /// [groupID] 群聊ID
   /// [count] 拉取消息的个数，不宜太多，会影响消息拉取的速度，这里建议一次拉取 20 个，默认20
   /// [lastMsgID] 获取消息的起始消息ID，如果传 null，起始消息为会话的最新消息
-  static Future<List<MessageEntity>> getHistoryMessageList({
+  Future<List<MessageEntity>> getHistoryMessageList({
     String userID,
     String groupID,
     int count = 20,
@@ -71,11 +71,11 @@ class ImMessageManager {
   /// 设置聊天记录为已读，此为 markC2CMessageAsRead 和 markGroupMessageAsRead 的封装
   /// [userID] 用户ID
   /// [groupID] 群ID
-  static Future<void> markMessageAsRead({String userID, String groupID}) => TencentImPlugin.markMessageAsRead(userID: userID, groupID: groupID);
+  Future<void> markMessageAsRead({String userID, String groupID}) => TencentImPlugin.markMessageAsRead(userID: userID, groupID: groupID);
 
   /// 删除本地消息
   /// [msgID] 消息ID
-  static Future<void> deleteMessageFromLocalStorage({@required String msgID}) =>
+  Future<void> deleteMessageFromLocalStorage({@required String msgID}) =>
       TencentImPlugin.deleteMessageFromLocalStorage(message: FindMessageEntity(msgId: msgID));
 
   /// 删除本地及漫游消息
@@ -85,14 +85,14 @@ class ImMessageManager {
   ///   3. 一秒钟最多只能调用一次该接口
   ///   4. 如果该账号在其他设备上拉取过这些消息，那么调用该接口删除后，这些消息仍然会保存在那些设备上，即删除消息不支持多端同步。
   /// [msgIDList] 消息ID集合
-  static Future<void> deleteMessages({@required List<String> msgIDList}) =>
+  Future<void> deleteMessages({@required List<String> msgIDList}) =>
       TencentImPlugin.deleteMessages(message: msgIDList.map((msgID) => FindMessageEntity(msgId: msgID)).toList());
 
   /// 向群组消息列表中添加一条消息
   /// [groupID] 群ID
   /// [sender] 发送人
   /// [message] 消息对象
-  static Future<void> insertGroupMessageToLocalStorage({
+  Future<void> insertGroupMessageToLocalStorage({
     @required String groupID,
     @required String sender,
     @required MessageNode node,
@@ -107,30 +107,30 @@ class ImMessageManager {
   /// 下载视频
   /// [msgID] 消息ID
   /// [path] 下载路径
-  static Future<void> downloadVideo({@required String msgID, @required String path}) =>
+  Future<void> downloadVideo({@required String msgID, @required String path}) =>
       TencentImPlugin.downloadVideo(message: FindMessageEntity(msgId: msgID), path: path);
 
   /// 下载视频缩略图
   /// [msgID] 消息ID
   /// [path] 下载路径
-  static Future<void> downloadVideoThumbnail({@required String msgID, @required String path}) =>
+  Future<void> downloadVideoThumbnail({@required String msgID, @required String path}) =>
       TencentImPlugin.downloadVideoThumbnail(message: FindMessageEntity(msgId: msgID), path: path);
 
   /// 下载语音
   /// [msgID] 消息ID
   /// [path] 下载路径
-  static Future<void> downloadSound({@required String msgID, @required String path}) =>
+  Future<void> downloadSound({@required String msgID, @required String path}) =>
       TencentImPlugin.downloadSound(message: FindMessageEntity(msgId: msgID), path: path);
 
   /// 设置消息本地Str
   /// [msgID] 消息ID
   /// [data] 数据对象
-  static Future<void> setMessageLocalCustomStr({@required String msgID, @required String data}) =>
+  Future<void> setMessageLocalCustomStr({@required String msgID, @required String data}) =>
       TencentImPlugin.setMessageLocalCustomStr(message: FindMessageEntity(msgId: msgID), data: data);
 
   /// 设置消息本地Int
   /// [msgID] 消息ID
   /// [data] 数据对象
-  static Future<void> setMessageLocalCustomInt({@required String msgID, @required int data}) =>
+  Future<void> setMessageLocalCustomInt({@required String msgID, @required int data}) =>
       TencentImPlugin.setMessageLocalCustomInt(message: FindMessageEntity(msgId: msgID), data: data);
 }

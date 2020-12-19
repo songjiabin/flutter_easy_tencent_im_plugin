@@ -15,9 +15,8 @@ class ImInitManager {
   /// 初始化SDK
   /// [appid] 应用ID
   /// [logPrintLevel] 日志打印级别
-  static Future<void> initSDK({@required String appid, LogPrintLevel logPrintLevel}) =>
-      TencentImPlugin.initSDK(appid: appid, logPrintLevel: logPrintLevel);
+  Future<void> initSDK({@required String appid, LogPrintLevel logPrintLevel}) => TencentImPlugin.initSDK(appid: appid, logPrintLevel: logPrintLevel);
 
   /// 反初始化SDK
-  static Future<void> unInitSDK() => TencentImPlugin.unInitSDK();
+  Future<void> unInitSDK() => TencentImPlugin.unInitSDK();
 }

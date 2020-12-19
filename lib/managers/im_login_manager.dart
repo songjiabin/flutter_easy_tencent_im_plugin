@@ -15,16 +15,16 @@ class ImLoginManager {
   /// 登录腾讯云IM
   /// [userID] 用户ID
   /// [userSig] 用户签名
-  static Future<void> login({@required String userID, @required String userSig}) => TencentImPlugin.login(userID: userID, userSig: userSig);
+  Future<void> login({@required String userID, @required String userSig}) => TencentImPlugin.login(userID: userID, userSig: userSig);
 
   /// 退出登录腾讯云IM
-  static Future<void> logout() => TencentImPlugin.logout();
+  Future<void> logout() => TencentImPlugin.logout();
 
   /// 获得用户登录状态
   /// [Return] 用户当前登录状态
-  static Future<LoginStatusEnum> getLoginStatus() => TencentImPlugin.getLoginStatus();
+  Future<LoginStatusEnum> getLoginStatus() => TencentImPlugin.getLoginStatus();
 
   /// 获得当前登录用户
   /// [Return] 当前用户ID
-  static Future<String> getLoginUser() => TencentImPlugin.getLoginUser();
+  Future<String> getLoginUser() => TencentImPlugin.getLoginUser();
 }

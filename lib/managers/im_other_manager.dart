@@ -14,5 +14,5 @@ class ImOtherManager {
 
   /// 设置未读桌标，Android使用doBackground，IOS更改setAPNSListener值
   /// [number] 桌标数量
-  static Future<void> setUnreadBadge({@required int number}) => TencentImPlugin.setUnreadBadge(number: number);
+  Future<void> setUnreadBadge({@required int number}) => TencentImPlugin.setUnreadBadge(number: number);
 }
