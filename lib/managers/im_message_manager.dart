@@ -64,7 +64,7 @@ class ImMessageManager {
       userID: userID,
       groupID: groupID,
       count: count,
-      lastMsg: FindMessageEntity(msgId: lastMsgID),
+      lastMsg: lastMsgID == null ? null : FindMessageEntity(msgId: lastMsgID),
     );
   }
 

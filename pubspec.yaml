@@ -1,6 +1,6 @@
 name: flutter_easy_tencent_im_plugin
 description: 更易用的腾讯即时通信IM Flutter插件
-version: 0.0.2+1
+version: 0.0.2+2
 author: Jack Zhang
 homepage:
 
@@ -13,11 +13,11 @@ dependencies:
     sdk: flutter
 
   # https://github.com/JiangJuHong/FlutterTencentImPlugin
-#  tencent_im_plugin: ^1.2.5
-  tencent_im_plugin:
-    git:
-      url: https://github.com/JiangJuHong/FlutterTencentImPlugin.git
-      ref: master
+  tencent_im_plugin: ^1.2.7
+#  tencent_im_plugin:
+#    git:
+#      url: https://github.com/JiangJuHong/FlutterTencentImPlugin.git
+#      ref: master
 
 dev_dependencies:
   flutter_test:

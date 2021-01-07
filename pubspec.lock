@@ -138,12 +138,10 @@ packages:
   tencent_im_plugin:
     dependency: "direct main"
     description:
-      path: "."
-      ref: master
-      resolved-ref: e347b3296634ee2c5106eac1dcae2762e5c0c16c
-      url: "https://github.com/JiangJuHong/FlutterTencentImPlugin.git"
-    source: git
-    version: "1.2.5"
+      name: tencent_im_plugin
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.2.7"
   term_glyph:
     dependency: transitive
     description:
