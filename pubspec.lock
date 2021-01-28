@@ -141,7 +141,7 @@ packages:
       name: tencent_im_plugin
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.7"
+    version: "1.2.11"
   term_glyph:
     dependency: transitive
     description:
